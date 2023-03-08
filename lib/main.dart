@@ -1,7 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:workmanager/workmanager.dart';
 import 'package:workmanager_demo/home_page.dart';
 
-void main() {
+const String taskName = "DemoTask";
+void callbackDispatcher() {
+  Workmanager().executeTask((taskName, inputData) {
+    switch (taskName) {
+      case 'DemoTask':
+        sendinDataToTask();
+        break;
+      default:
+    }
+    return Future.value(true);
+  });
+}
+
+sendinDataToTask() {
+  print("Hi Demoo work");
+}
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Workmanager().initialize(
+    callbackDispatcher,
+    isInDebugMode: true,
+  );
   runApp(const MyApp());
 }
 
