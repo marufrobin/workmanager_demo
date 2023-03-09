@@ -50,13 +50,6 @@ class TestTaskHandler extends TaskHandler {
 
   @override
   Future<void> onEvent(DateTime timestamp, SendPort? sendPort) {
-    FlutterForegroundTask.updateService(
-      notificationTitle: "My first Task Handler demo",
-      notificationText: "Event Count: $_eventCount",
-    );
-    sendPort?.send(_eventCount);
-    _eventCount++;
-    // TODO: implement onEvent
     throw UnimplementedError();
   }
 
@@ -85,13 +78,13 @@ class TestTaskHandler extends TaskHandler {
     super.onButtonPressed(id);
   }
 
-  @override
+  /*@override
   void onNotificationPressed() {
     FlutterForegroundTask.launchApp("/resume-route");
     _sendPort?.send("onNotificationPressed");
     // TODO: implement onNotificationPressed
     super.onNotificationPressed();
-  }
+  }*/
 }
 
 class ExampleApp extends StatelessWidget {

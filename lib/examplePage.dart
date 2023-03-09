@@ -30,10 +30,10 @@ class _ExamplePageState extends State<ExamplePage> {
           name: 'launcher',
           backgroundColor: Colors.orange,
         ),
-        buttons: [
+        /* buttons: [
           const NotificationButton(id: 'sendButton', text: 'Send'),
           const NotificationButton(id: 'testButton', text: 'Test'),
-        ],
+        ],*/
       ),
       iosNotificationOptions: const IOSNotificationOptions(
         showNotification: true,
@@ -68,7 +68,7 @@ class _ExamplePageState extends State<ExamplePage> {
     }
 
     // You can save data using the saveData function.
-    await FlutterForegroundTask.saveData(key: 'customData', value: 'hello');
+    // await FlutterForegroundTask.saveData(key: 'customData', value: 'hello');
 
     // Register the receivePort before starting the service.
     final ReceivePort? receivePort = FlutterForegroundTask.receivePort;
@@ -122,10 +122,10 @@ class _ExamplePageState extends State<ExamplePage> {
   }
 
   T? _ambiguate<T>(T? value) => value;
-  Future isAppOnForeground() async {
+  /* Future isAppOnForeground() async {
     var onForeground = await FlutterForegroundTask.isAppOnForeground;
     print("On Foreground::$onForeground");
-  }
+  }*/
 
   @override
   void initState() {
@@ -138,7 +138,7 @@ class _ExamplePageState extends State<ExamplePage> {
         _registerReceivePort(newReceivePort);
       }
     });
-    isAppOnForeground();
+    // isAppOnForeground();
   }
 
   @override
