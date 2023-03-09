@@ -36,6 +36,8 @@ void startCallBack() {
   FlutterForegroundTask.setTaskHandler(TestTaskHandler());
 }
 
+int counter = 0;
+
 class TestTaskHandler extends TaskHandler {
   SendPort? _sendPort;
   int _eventCount = 0;
@@ -65,9 +67,10 @@ class TestTaskHandler extends TaskHandler {
     // print("Custom Data: ${customData}");
 
     var tastNumber = 0;
-    Timer.periodic(Duration(seconds: 10), (timer) {
-      print(
-          "My name is Robin and tast number: ${tastNumber++}---${timer.toString()}");
+    Timer.periodic(Duration(seconds: 5), (timer) {
+      counter = tastNumber + 1;
+
+      print("My name is Robin and tast number: ${tastNumber++}}");
     });
 
     // TODO: implement onStart

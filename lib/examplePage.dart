@@ -174,6 +174,10 @@ class _ExamplePageState extends State<ExamplePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(
+            "Counter ::: $counter",
+            style: TextStyle(fontSize: 26),
+          ),
           buttonBuilder('start', onPressed: _startForegroundTask),
           buttonBuilder('stop', onPressed: _stopForegroundTask),
         ],
